@@ -27,7 +27,7 @@ By the end of this course, learners should be able to:
 Through guided labs, learners will first connect to the BigQuery Workspace and execute SQL commands on preloaded sample table data.  They'll then enable Google Cloud Shell and the bq command-line tool to practice with and become familiar with programmatic SQL approaches to BigQuery data access and management. The final section describes the importance of dynamic SQL and provides a lab for learners to practice parameterizing SQL queries.   
 
 ### **Intended Audience:**  
-Data Developers and Data Analysts who wish to get started with BigQuery and be introduced to how data warehouses intersect with the observability concepts. 
+**Data Engineers** and **Data Analysts** who seek a quickstart with BigQuery involving hands on practice and a tour of the key facilities.
 
 ### **Considerations:** 
 
