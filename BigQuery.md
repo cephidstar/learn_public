@@ -46,7 +46,7 @@ The **bigquery-public-data** dataset appears in the Explorer pane of the console
 
 ![](/assets/images/BQ_Explorer_bd.png)
 
-Step 3. Expand the bigquery-public-data dataset in the Explorer pane to reveal the sample table groups that you can practice upon.
+<mark >Step 3.</mark> Expand the bigquery-public-data dataset in the Explorer pane to reveal the sample table groups that you can practice upon.
 Each dataset contains one or more tables. Scroll down to and expand the **census_bureau_usa** table group. 
  
 Step 4. Within the census_bureau_usa table group, click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  Take a moment to review the field names and definitions. Let's now run some queries on it.  
