@@ -199,16 +199,11 @@ The **eventlog.csv** file contains sample event data, similar perhaps to event d
 After uploading the file, consider which types of queries you might write in order to analyze this event data. Also consider how parameterization
 of your SQL could lead to a standard set of API's or some other programmed assets, that could be used by other applications to analyze this data and/or present the results in dashboards.
 
- 
-## Summary 
+## Summary
 
-In this course you were introduced to the BigQuery enterprise data warehouse.  BigQuery data is stored in table/column format and is accessed and   managed through standard SQL, which can be executed through BigQuery's API client libraries, built for several common languages.
+Congratulations on completing this course. In this course you were introduced to the BigQuery enterprise data warehouse and you practiced executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery Cloud Shell. We hope your 
 
-From an observability perspective, BigQuery is particularly suited for storing and analyzing observability data, such as event data produced by performance monitoring applications. BigQuery is highly scalable and it includes powerful features such as a high bandwidth data analysis engine, supported by machine learning. BigQuery also supports the monitoring of its own performance, by computing and storing metrics around the operations executed upon the data it houses.
-
-In this course, you'll become familiar with BigQuery through hands-on practice, by executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery Cloud Shell.
-
-At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sanbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
+If you signed up with Google BigQuery for free account access, make sure to monitor your usage and account status as you continue experimenting in the BigQuery Workspace and Google Cloud Shell.
 
 ## Resources
 
