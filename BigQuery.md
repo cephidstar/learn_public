@@ -214,7 +214,9 @@ At the end of this course, you'll have had some practice with BigQuery and you'l
 
 ### Google Cloud and BigQuery Resources ###
 
+[Google Cloud documentation](https://cloud.google.com/docs)
+[BigQuery documentation](https://cloud.google.com/bigquery/docs)
 
 ### Other Resources ###
 
-
+[W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
