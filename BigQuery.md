@@ -113,7 +113,7 @@ bq query --use_legacy_sql=false \
 'SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` WHERE zipcode = "12054"' 
 ~~~~
 
-! Careful! 
+**Alert! Alert! Alert!**
 Make sure the backslash at the end of the first line is recognized. If it is colored red as shown below ...
 
 ![](/assets/images/colored_red.png)
