@@ -204,7 +204,7 @@ of your SQL could lead to a standard set of API's or some other programmed asset
 
 Congratulations on completing this course. You now have working knowledge of how to use BigQuery for your application requirements.
 
-We hope you plan to continue using the BigQuery Workspace and Google Cloud Shell to experiment with SQL. Note that can also access BigQuery through your favorite programming languages, using the BigQuery APIs. 
+We hope you plan to continue using the BigQuery Workspace and Google Cloud Shell to experiment with SQL. Note that you can also access BigQuery through your favorite programming languages, using the BigQuery APIs. 
 
 If you signed up with Google BigQuery for the free account access, make sure to monitor your usage and account status as you continue experimenting in the BigQuery Workspace, Google Cloud Shell.
 
