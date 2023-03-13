@@ -34,24 +34,24 @@ When you've arrived at the BigQuery Workspace shown below, you're ready to acces
 
 ### Lab: Execute SQL Commands in the BigQuery Workspace
 
-Step 1. You should be logged into the BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
+**Step 1.** You should be logged into the BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
 
 Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes wide range of statistical data that you can practice accessing with SQL. 
 
 ![](/assets/images/Lab1_image_1.png)
 
-Step 2. Within the initial Workspace banner, Click VIEW DATASET. If prompted again in another pop-up window, click View Dataset again. 
+**Step 2.** Within the initial Workspace banner, Click VIEW DATASET. If prompted again in another pop-up window, click View Dataset again. 
 
 The **bigquery-public-data** dataset appears in the Explorer pane of the console, on the left, just below your personal dataset, which will be issued a randomly generated name such as 'beaming-storm-379618'.
 
 ![](/assets/images/BQ_Explorer_bd.png)
 
-<mark >Step 3.</mark> Expand the bigquery-public-data dataset in the Explorer pane to reveal the sample table groups that you can practice upon.
+**Step 3.** Expand the bigquery-public-data dataset in the Explorer pane to reveal the sample table groups that you can practice upon.
 Each dataset contains one or more tables. Scroll down to and expand the **census_bureau_usa** table group. 
  
-Step 4. Within the census_bureau_usa table group, click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  Take a moment to review the field names and definitions. Let's now run some queries on it.  
+**Step 4.** Within the census_bureau_usa table group, click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  Take a moment to review the field names and definitions. Let's now run some queries on it.  
 
-Step 5. Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select the **In a new tab** option.  The workspace opens with a simple, incomplete SQL SELECT statement. The SELECT clause is shown in error because you need to supply to the clause, the fields to retrieve. 
+**Step 5.** Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select the **In a new tab** option.  The workspace opens with a simple, incomplete SQL SELECT statement. The SELECT clause is shown in error because you need to supply to the clause, the fields to retrieve. 
  
 Select 'all fields' by entering an asterisk * in the space between the SELECT and FROM clauses, making no other changes to the statement. It should look as shown.
 
@@ -59,18 +59,18 @@ Select 'all fields' by entering an asterisk * in the space between the SELECT an
 SELECT * FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` LIMIT 1000 
 ~~~
 
-Step 6. Click the RUN command just above the query pane. The query results should appear in the a panel below the statement. The first 1000 records in the **population_by_zip_2010** table.
+**Step 6.** Click the RUN command just above the query pane. The query results should appear in the a panel below the statement. The first 1000 records in the **population_by_zip_2010** table.
 
 ![](/assets/images/query_results.png)
  
-Step 7. Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps your hometown zipcode. You can copy/paste
+**Step 7.** Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps your hometown zipcode. You can copy/paste
 and overwrite statements into the query pane.
 
 ~~~
 SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` WHERE zipcode = '12054'
 ~~~
 
-Step 8. Just for fun, query the **samples.shakespeare** table, which contains the text of the entire works of Shakespeare. The following query counts the number of distinct phrases in Shakespeare's works, where the supplied string is found.
+**Step 8.** Just for fun, query the **samples.shakespeare** table, which contains the text of the entire works of Shakespeare. The following query counts the number of distinct phrases in Shakespeare's works, where the supplied string is found.
 
 ~~~
 SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakespeare WHERE word LIKE '%love%' GROUP BY word 
@@ -86,17 +86,17 @@ Thankfully, Google Cloud provides tools that make it easy to connect to BigQuery
 
 ### Lab: Access BigQuery Data Through Google Cloud Shell
 
-Step1. Access the Google Cloud Shell in a separate browser tab, using the following URL https://console.cloud.google.com/bigquery?cloudshell=true .
+**Step 1.** Access the Google Cloud Shell in a separate browser tab, using the following URL https://console.cloud.google.com/bigquery?cloudshell=true .
 
 Wait a few moments as Cloud Shell provisions a Compute Engine virtual machine running a Debian-based Linux operating system for your use. The Cloud Shell terminal should open in a panel at the bottom of the screen:
 
 ![](/assets/images/Cloudshell_Terminal.png)
  
-Step2. But instead of creating, editing and running scripts solely through this bash shell command line, let's make this exercise even easier by using the Google Cloudshell Editor. 
+**Step 2.** But instead of creating, editing and running scripts solely through this bash shell command line, let's make this exercise even easier by using the Google Cloudshell Editor. 
  
 Just above the terminal, to the right,  Click ![](/assets/images/open_editor.png) and give it a moment to appear. If prompted, open the 'Home Workspace', and again, if prompted 'Activate' the shell.
 
-Step3. Now add the terminal back into the workspace by clicking **Open Terminal** above the editor.
+**Step 3.** Now add the terminal back into the workspace by clicking **Open Terminal** above the editor.
 
 ![](/assets/images/open_terminal.png)
 
@@ -104,9 +104,9 @@ You should see the Explorer panel on the left, with a folder/file directory unde
 
 ![](/assets/images/new_file.png)
 
-Step 4. Create a new script file with the name **myfirstbqscript.sh**
+**Step 4.** Create a new script file with the name **myfirstbqscript.sh**
 
-Step 5. Copy the following code into the script (in two lines). The ***bq query*** command let's you execute the SQL statement that follows it.  
+**Step 5.** Copy the following code into the script (in two lines). The ***bq query*** command let's you execute the SQL statement that follows it.  
 
 ~~~~
 bq query --use_legacy_sql=false \ 
@@ -120,7 +120,7 @@ bq query --use_legacy_sql=false \
 
 If it is colored red, delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
 
-Step 6. On the command line in the bottom panel, run your script with ***./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
+**Step 6.** On the command line in the bottom panel, run your script with ***./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
  
 ***Was there a permissions error when you ran your script?*** With no other permissions settings entered, each newly created script file you attempt run will require you to open up the permissions. Correct the issue by executing ***chmod +x myfirstbqscript.sh*** then run the script again. 
 
@@ -153,15 +153,15 @@ Review: Running your script on the command line with a parameter would look like
 Within the script, the parameter value is placed in the variable ***$1*** . If you use multiple parameters on
 the command line, they would be assigned to the variables $1, $2, $3 etc. within the script. 
  
-Step 1. Add following line of code above the **bq query** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
+**Step 1.** Add following line of code above the **bq query** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
 
 **zipcode=$1**
 
-Step 2. Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized version.
+**Step 2.** Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized version.
 
 **WHERE zipcode = "'$zipcode'"'** 
 
-Step 3. Execute your script as **./myfirstbqscript.sh ##### ** where ##### is a zipcode of your choice.
+**Step 3.** Execute your script as **./myfirstbqscript.sh ##### ** where ##### is a zipcode of your choice.
 
 #### Part II ####
  
