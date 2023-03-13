@@ -8,7 +8,7 @@ From an observability perspective, BigQuery is particularly suited for storing a
 
 In this course, you'll become familiar with BigQuery through hands-on practice, by executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery Cloud Shell.
  
-At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sanbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
+At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sandbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
 
 ## Connecting to the BigQuery Sandbox
 
@@ -185,31 +185,40 @@ Give it a try, and enjoy your rapid fire Shakespeare data mining!
 Write a script-driven BigQuery query that accepts 2 or 3 command line parameters that will become values used
 by a parameterized SQL statement. 
 
-However, your script must execute without error when some or none of the parameters are provided.  
-Take some time to consider the SQL statement default behaviors when parameters are missing.
+However, your script must execute without error, when some or none of the parameters are provided.  
+Take some time to consider the various SQL statement default behaviors you require for each possible
+combination of supplied parameters.
 
 #### Challenge #2 ####
 
-BigQuery is particularly suited for storing and analyzing observability data.  
+BigQuery is particularly suited for storing and analyzing observability data. 
 
-(Optional Lab) Upload and query sample event data to BigQuery and execute SQL commands  
-to simulate how BigQuery might be used to manage and analyze observability event data stored in the cloud.  
+In this repository's **/assets** folder, you'll find a CSV file named **eventlog.csv**.
+Use BigQuery's **ADD DATA** feature (shown below) to upload this file to create a new data table.
 
 ![](/assets/images/add_data.png)
 
- Now lets apply our script to some event data 
+The **eventlog.csv** file contains sample event data, similar to that produced by event data produced by performance monitoring applications. 
 
- upload the table 
-
- Type the SQL into the sandbox 
-
- Create a new script with the same SQL 
-
- Parameterize it 
+After uploading the file, consider which types of queries you might write in order to analyze this event data. Also consider how parameterization
+of your SQL could lead to 
 
  
 ## Summary 
 
+In this course you were introduced to the BigQuery enterprise data warehouse.  BigQuery data is stored in table/column format and is accessed and   managed through standard SQL, which can be executed through BigQuery's API client libraries, built for several common languages.
+
+From an observability perspective, BigQuery is particularly suited for storing and analyzing observability data, such as event data produced by performance monitoring applications. BigQuery is highly scalable and it includes powerful features such as a high bandwidth data analysis engine, supported by machine learning. BigQuery also supports the monitoring of its own performance, by computing and storing metrics around the operations executed upon the data it houses.
+
+In this course, you'll become familiar with BigQuery through hands-on practice, by executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery Cloud Shell.
+
+At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sanbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
+
 ## Resources
+
+### Google Cloud and BigQuery Resources ###
+
+
+### Other Resources ###
 
 
