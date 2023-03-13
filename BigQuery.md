@@ -111,8 +111,8 @@ bq query --use_legacy_sql=false \
 'SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` WHERE zipcode = "12054"' 
 ~~~~
 
-**Alert! Alert! Alert!**
-Make sure the backslash at the end of the first line is recognized. If it is colored red as shown below ...
+**Alert! 
+Make sure the escape character at the end of the first line is recognized. If it is colored red as shown below ...
 
 ![](/assets/images/colored_red.png)
 
@@ -175,6 +175,9 @@ Here you need to use **LIKE "%'$search_string'%"**
 
 Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
+~~~
+For more information on quoting mechanisms in Unix/Linux, check out the Resources at the end of this course.
+~~~
 
 ## Other Things to Try
 
