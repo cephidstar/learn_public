@@ -16,7 +16,7 @@ The BigQuery Workspace is available to anyone with a Google Account at no cost. 
 
 If you already have a Google account with a payment method defined, the BigQuery setup will consist of just a few steps. Otherwise, they'll be just a few more steps for entering and verifying your information.
 
-To get started, go to: https://cloud.google.com/bigquery. If you're already signed up to use BigQuery, then the link above will take you to the right place and you can skip the rest of this section. 
+To get started, go to the [BigQuery main site](https://cloud.google.com/bigquery). If you're already signed up to use BigQuery, then the link above will take you to the right place and you can skip the rest of this section. 
 
 Click either of the **getting started** buttons you'll find on the welcome/initialization screen.
 
@@ -32,7 +32,7 @@ When you've arrived at the BigQuery Workspace shown below, you're ready to acces
 
 ### Lab: Execute SQL Commands in the BigQuery Workspace
 
-**Step 1.** You should be logged into the BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
+**Step 1.** You should be logged into the BigQuery Workspace, otherwise open it [here](https://console.cloud.google.com/bigquery)
 
 Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes a wide range of statistical data that you can practice accessing with SQL. 
 
@@ -84,7 +84,7 @@ Thankfully, Google Cloud provides tools that make it easy to connect to BigQuery
 
 ### Lab: Access BigQuery Data Through Google Cloud Shell
 
-**Step 1.** Access the Google Cloud Shell in a separate browser tab, using the following URL https://console.cloud.google.com/bigquery?cloudshell=true .
+**Step 1.** Access the [Google Cloud Shell](https://console.cloud.google.com/bigquery?cloudshell=true).
 
 Wait a few moments as Cloud Shell provisions a Compute Engine virtual machine running a Debian-based Linux operating system for your use. The Cloud Shell terminal should open in a panel at the bottom of the screen:
 
@@ -214,10 +214,10 @@ At the end of this course, you'll have had some practice with BigQuery and you'l
 
 ### Google Cloud and BigQuery Resources ###
 
-*[Google Cloud documentation](https://cloud.google.com/docs)
+[Google Cloud documentation](https://cloud.google.com/docs)
 
-*[BigQuery documentation](https://cloud.google.com/bigquery/docs)
+[BigQuery documentation](https://cloud.google.com/bigquery/docs)
 
 ### Other Resources ###
 
-*[W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
+[W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
