@@ -31,4 +31,4 @@ Through guided labs, learners will first connect to the BigQuery Workspace and e
 
 ### **Considerations:** 
 
-Depending on the status of the learner's Google account and their experience with BigQuery, learners may have differing experiences signing up for and connecting to BigQuery and Google Cloud Shell.  In order to activate the free account access to these tools, there must billing method associated with the Google account. Learners will not be charged for using these services if they remain within the free use limits.
+Depending on the status of the learner's Google account and their experience with BigQuery, learners may have differing experiences signing up for and connecting to BigQuery and Google Cloud Shell.  In order to activate the free account access to these tools, there must be a billing method associated with the Google account. Learners will not be charged for using these services if they remain within the free use limits.
