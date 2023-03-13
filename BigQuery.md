@@ -6,42 +6,41 @@ BigQuery is Google Cloud's enterprise data warehouse, built upon a serverless ar
 
 From an observability perspective, BigQuery is particularly suited for storing and analyzing observability data, such as event data produced by performance monitoring applications. BigQuery is highly scalable and it includes powerful features such as a high bandwidth data analysis engine, supported by machine learning. BigQuery also supports the monitoring of its own performance, by computing and storing metrics around the operations executed upon the data it houses. 
 
-In this course, you'll become familiar with BigQuery through hands-on practice, by executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery command-line tool.
+In this course, you'll become familiar with BigQuery through hands-on practice, by executing SQL queries in both the BigQuery SQL Workspace and through the BigQuery Cloud Shell.
  
-By the the end of this course, you'll have a working knowledge of BigQuery, your BigQuery SQL Workspace and Linux command line tool will be up and running, and you'll be equipped to continue experimenting with SQL on your own, using the many BigQuery resources that Google and other practitioners provide.
+At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sanbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
 
 ## Connecting to the BigQuery Sandbox
 
-The BigQuery Workspace is available to anyone with a Google Account at no cost. However Google requires
-you to have set up a payment method, for at minimum, verification purposes.
+The BigQuery Workspace is available to anyone with a Google Account at no cost. However Google requires you to have set up a payment method on your account, for at minimum, verification purposes.
 
-If you already have a Google account with a payment method defined, the BigQuery setup will consist
-of just a few steps. Otherwise, they'll be just a few more steps for entering and verifying your information.
+If you already have a Google account with a payment method defined, the BigQuery setup will consist of just a few steps. Otherwise, they'll be just a few more steps for entering and verifying your information.
 
-To get started, go to: https://cloud.google.com/bigquery . If you're already signed up to use BigQuery, then you'll
-be in the right place and you can skip to the lab, just after this section. 
+To get started, go to: https://cloud.google.com/bigquery . 
+
+If you're already signed up to use BigQuery, then the link will take you to the right place and you can skip the rest of this section. 
 
 Otherwise, click either of the **getting started** buttons you'll find on the welcome/initialization screen.
 
 ![](/assets/images/sign_up_1b.png)
 
-After you've completed the signup steps, you'll be taken to the Google Cloud Console. Scroll to find a link to BigQuery and select it.
+This will initiate the sign up steps you'll need to complete. When you've finished, you'll be presented the Google Cloud Console shown below. Scroll to find a link to the BigQuery product and select it.
 
 ![](/assets/images/sign_up_2.png)
 
-When you've arrived at the BigQuery Workspace shown below, you're ready to get going!
+When you've arrived at the BigQuery Workspace shown below, you're ready to access data!
 
 ![](/assets/images/BigQuery_Console_bd.png)
 
 ### Lab: Execute SQL Commands in the BigQuery Workspace
 
-Step 1. You should be logged into BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
+Step 1. You should be logged into the BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
 
-Step 2. BigQuery provides sample 'Public Trends' data in a special dataset. Within the initial Workspace banner, Click VIEW DATASET. 
+Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes wide range of statistical data that you can practice accessing with SQL. 
 
 ![](/assets/images/Lab1_image_1.png)
 
-If prompted again in another pop-up window, click View Dataset again. 
+Step 2. Within the initial Workspace banner, Click VIEW DATASET. If prompted again in another pop-up window, click View Dataset again. 
 
 The **bigquery-public-data** dataset appears in the Explorer pane of the console, on the left, just below your personal dataset, which will be issued a randomly generated name such as 'beaming-storm-379618'.
 
@@ -50,12 +49,11 @@ The **bigquery-public-data** dataset appears in the Explorer pane of the console
 Step 3. Expand the bigquery-public-data dataset in the Explorer pane to reveal the sample table groups that you can practice upon.
 Each dataset contains one or more tables. Scroll down to and expand the **census_bureau_usa** table group. 
  
-Step 4. Click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  
-Take a moment to review the field names and definitions. Let's now run some queries on it.  
+Step 4. Within the census_bureau_usa table group, click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  Take a moment to review the field names and definitions. Let's now run some queries on it.  
 
-Step 5. Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select **In a new tab**.  The workspace opens with a simple, incomplete SQL SELECT statement. The SELECT clause is shown in error, because you need to supply to the clause, the fields to retrieve. 
+Step 5. Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select the **In a new tab** option.  The workspace opens with a simple, incomplete SQL SELECT statement. The SELECT clause is shown in error because you need to supply to the clause, the fields to retrieve. 
  
-Select all of the table fields by entering an asterisk * between the SELECT and FROM clauses, making no other changes to the statement. It should look as shown.
+Select 'all fields' by entering an asterisk * in the space between the SELECT and FROM clauses, making no other changes to the statement. It should look as shown.
 
 ~~~
 SELECT * FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` LIMIT 1000 
