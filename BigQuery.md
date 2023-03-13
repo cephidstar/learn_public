@@ -146,18 +146,24 @@ If you could substitute the literal "12054" in the command with a parameter, you
 
 Running your script on the command line with a parameter would look like this:
 
-**$ ./myfirstbqscript.sh 12054**
+~~~
+$ ./myfirstbqscript.sh 12054
+~~~
 
 Within the script, the parameter value is placed in the variable **$1**. If you use multiple parameters on
 the command line, they would be assigned to the variables $1, $2, $3 etc. within the script. 
  
 **Step 1.** Add the following line of code above the **bq query** command in **./myfirstbqscript.sh**, to recieve the zip code value in a well-named variable.
 
-**zipcode=$1**
+~~~
+zipcode=$1
+~~~
 
 **Step 2.** Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized token.
 
-**WHERE zipcode = "'$zipcode'"'** 
+~~~
+WHERE zipcode = "'$zipcode'"'
+~~~
 
 **Step 3.** Execute your script as /myfirstbqscript.sh ##### where ##### is a zipcode of your choice.
 
