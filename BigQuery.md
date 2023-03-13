@@ -114,11 +114,11 @@ bq query --use_legacy_sql=false \
 ~~~~
 
 ! Careful! 
-Make sure the backslash at the end of the first line is recognized. 
+Make sure the backslash at the end of the first line is recognized. If it is colored red as shown below ...
 
-bq query --use_legacy_sql=false \ 
+![](/assets/images/colored_red.png)
 
-If it is colored red, delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
+... delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
 
 **Step 6.** On the command line in the bottom panel, run your script with ***./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
  
