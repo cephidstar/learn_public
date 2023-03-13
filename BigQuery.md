@@ -120,7 +120,7 @@ Make sure the backslash at the end of the first line is recognized. If it is col
 
 **Step 6.** On the command line in the bottom panel, run your script with **./myfirstbqscript.sh**  If prompted, click to authorize use of the bq command. 
  
-***Was there a permissions error when you ran your script?*** With no other permissions settings entered, each newly created script file you attempt run will require you to open up the permissions. Correct the issue by executing ***chmod +x myfirstbqscript.sh*** then run the script again. 
+**Was there a permissions error when you ran your script?** With no other permissions settings entered, each newly created script file you attempt run will require you to open up the permissions. Correct the issue by executing **chmod +x myfirstbqscript.sh** and run the script again. 
 
 You should get a result similar to the one below. 
 
@@ -144,22 +144,22 @@ If you could substitute the literal "12054" in the command with a parameter, you
 
 #### Part I - Modify myfirstbqscript.sh to receive the value for the zip code from the command line. ####
 
-Review: Running your script on the command line with a parameter would look like this:
+Running your script on the command line with a parameter would look like this:
 
 **$ ./myfirstbqscript.sh 12054**
 
-Within the script, the parameter value is placed in the variable ***$1*** . If you use multiple parameters on
+Within the script, the parameter value is placed in the variable **$1**. If you use multiple parameters on
 the command line, they would be assigned to the variables $1, $2, $3 etc. within the script. 
  
-**Step 1.** Add following line of code above the **bq query** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
+**Step 1.** Add the following line of code above the **bq query** command in **./myfirstbqscript.sh**, to recieve the zip code value in a well-named variable.
 
 **zipcode=$1**
 
-**Step 2.** Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized version.
+**Step 2.** Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized token.
 
 **WHERE zipcode = "'$zipcode'"'** 
 
-**Step 3.** Execute your script as **./myfirstbqscript.sh ##### ** where ##### is a zipcode of your choice.
+**Step 3.** Execute your script as /myfirstbqscript.sh ##### where ##### is a zipcode of your choice.
 
 #### Part II ####
  
@@ -180,12 +180,9 @@ Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
 #### Challenge #1 ####
 
-Write a script-driven BigQuery query that accepts 2 or 3 command line parameters that will become values used
-by a parameterized SQL statement. 
+Write a script-driven BigQuery query that accepts 2 or 3 command line parameters that will become values inserted into a parameterized SQL statement. 
 
-However, your script must execute without error, when some or none of the parameters are provided.  
-Take some time to consider the various SQL statement default behaviors you require for each possible
-combination of supplied parameters.
+However, your script must execute without error, when some or none of the parameters are provided. Take some time to consider the various SQL statement default behaviors you require for each possible combination of supplied parameters.
 
 #### Challenge #2 ####
 
@@ -197,7 +194,7 @@ appear in your default dataset that was created for you when you created your Bi
 
 ![](/assets/images/add_data.png)
 
-The **eventlog.csv** file contains sample event data, similar perhaps, to event data produced by performance monitoring applications. 
+The **eventlog.csv** file contains sample event data, similar perhaps to event data produced by performance monitoring applications. 
 
 After uploading the file, consider which types of queries you might write in order to analyze this event data. Also consider how parameterization
 of your SQL could lead to a standard set of API's or some other programmed assets, that could be used by other applications to analyze this data and/or present the results in dashboards.
