@@ -190,10 +190,12 @@ Take some time to consider the SQL statement default behaviors when parameters a
 
 #### Challenge #2 ####
 
-BigQuery is particularly suited for storing and analyzing observability data
+BigQuery is particularly suited for storing and analyzing observability data.  
 
 (Optional Lab) Upload and query sample event data to BigQuery and execute SQL commands  
 to simulate how BigQuery might be used to manage and analyze observability event data stored in the cloud.  
+
+![](/assets/images/add_data.png)
 
  Now lets apply our script to some event data 
 
