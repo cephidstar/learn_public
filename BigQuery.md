@@ -195,14 +195,14 @@ BigQuery is particularly suited for storing and analyzing observability data.
 
 In this repository's **/assets** folder, you'll find a CSV file named **eventlog.csv**.
 Use BigQuery's **ADD DATA** feature (shown below) to upload this file to create a new data table. Once uploaded, it will
-appear in your default dataset that was create for you when you created your BigQuery account.
+appear in your default dataset that was created for you when you created your BigQuery account.
 
 ![](/assets/images/add_data.png)
 
-The **eventlog.csv** file contains sample event data, similar to that produced by event data produced by performance monitoring applications. 
+The **eventlog.csv** file contains sample event data, similar perhaps, to event data produced by performance monitoring applications. 
 
 After uploading the file, consider which types of queries you might write in order to analyze this event data. Also consider how parameterization
-of your SQL could lead to 
+of your SQL could lead to a standard set of API's or some other programmed assets, that could be used by other applications to analyze this data and/or present the results in dashboards.
 
  
 ## Summary 
