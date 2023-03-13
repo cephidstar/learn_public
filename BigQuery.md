@@ -32,7 +32,7 @@ When you've arrived at the BigQuery Workspace shown below, you're ready to acces
 
 ### Lab: Execute SQL Commands in the BigQuery Workspace
 
-**Step 1.** You should be logged into the BigQuery Workspace, otherwise open it [here](https://console.cloud.google.com/bigquery)
+**Step 1.** You should be logged into the BigQuery Workspace, otherwise open it [here](https://console.cloud.google.com/bigquery).
 
 Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes a wide range of statistical data that you can practice accessing with SQL. 
 
