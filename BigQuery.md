@@ -59,19 +59,22 @@ Select 'all fields' by entering an asterisk * in the space between the SELECT an
 SELECT * FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` LIMIT 1000 
 ~~~
 
-Step 6. Click the RUN command. The Query results should appear in the a panel below the statement. The first 1000 records in the **population_by_zip_2010** table.
+Step 6. Click the RUN command just above the query pane. The query results should appear in the a panel below the statement. The first 1000 records in the **population_by_zip_2010** table.
+
+![](/assets/images/query_results.png)
  
-Step 7. Modify the statement as shown below and re-run it to retrieve the population for a specific zip code. You can copy/paste
-and overwrite statements into the query workspace.
+Step 7. Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps hometown zipcode. You can copy/paste
+and overwrite statements into the query pane.
 
+~~~
 SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` WHERE zipcode = '12054'
+~~~
 
-Then try this query again with your hometown zipcode.
+Step 8. Just for fun, query the **samples.shakespeare** table, which contains the text of the entire works of Shakespeare. The following query counts the number of distinct phrases in Shakespeare's works, where the supplied string is found.
 
-Step 8. Just for fun, let's query the **samples.shakespeare** table, which contains the text of the entire works of Shakespeare.
-The following query counts the number of distinct phrases in Shakespeare's work where the supplied string is found.
-
+~~~
 SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakespeare WHERE word LIKE '%love%' GROUP BY word 
+~~~
 
 ## Accessing BigQuery Data Outside the Sandbox
 
