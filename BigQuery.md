@@ -16,11 +16,9 @@ The BigQuery Workspace is available to anyone with a Google Account at no cost. 
 
 If you already have a Google account with a payment method defined, the BigQuery setup will consist of just a few steps. Otherwise, they'll be just a few more steps for entering and verifying your information.
 
-To get started, go to: https://cloud.google.com/bigquery . 
+To get started, go to: https://cloud.google.com/bigquery. If you're already signed up to use BigQuery, then the link above will take you to the right place and you can skip the rest of this section. 
 
-If you're already signed up to use BigQuery, then the link will take you to the right place and you can skip the rest of this section. 
-
-Otherwise, click either of the **getting started** buttons you'll find on the welcome/initialization screen.
+Click either of the **getting started** buttons you'll find on the welcome/initialization screen.
 
 ![](/assets/images/sign_up_1b.png)
 
@@ -36,11 +34,11 @@ When you've arrived at the BigQuery Workspace shown below, you're ready to acces
 
 **Step 1.** You should be logged into the BigQuery Workspace, otherwise open it in a new browser tab with https://console.cloud.google.com/bigquery .
 
-Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes wide range of statistical data that you can practice accessing with SQL. 
+Within the workspace, BigQuery gives you access to the 'Google Trends' public dataset, which includes a wide range of statistical data that you can practice accessing with SQL. 
 
 ![](/assets/images/Lab1_image_1.png)
 
-**Step 2.** Within the initial Workspace banner, Click VIEW DATASET. If prompted again in another pop-up window, click View Dataset again. 
+**Step 2.** Within the initial Workspace banner shown above, Click VIEW DATASET. If prompted again in another pop-up window, click View Dataset again. 
 
 The **bigquery-public-data** dataset appears in the Explorer pane of the console, on the left, just below your personal dataset, which will be issued a randomly generated name such as 'beaming-storm-379618'.
 
@@ -51,9 +49,9 @@ Each dataset contains one or more tables. Scroll down to and expand the **census
  
 **Step 4.** Within the census_bureau_usa table group, click the **population_by_zip_2010** table to open it in the workspace to the right.  Here you'll see the list of fields that comprise the table.  Take a moment to review the field names and definitions. Let's now run some queries on it.  
 
-**Step 5.** Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select the **In a new tab** option.  The workspace opens with a simple, incomplete SQL SELECT statement. The SELECT clause is shown in error because you need to supply to the clause, the fields to retrieve. 
+**Step 5.** Just above the fields list, open the ![](/assets/images/Query_dropdown.png) menu and select the **In a new tab** option.  The workspace opens with a simple, incomplete SQL SELECT statement. The statement is shown in error because you need to supply to the clause, the fields to retrieve. 
  
-Select 'all fields' by entering an asterisk * in the space between the SELECT and FROM clauses, making no other changes to the statement. It should look as shown.
+Select 'all fields' by entering an asterisk * in the space between the SELECT and FROM clauses, making no other changes to the statement. It should look as shown below:
 
 ~~~
 SELECT * FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` LIMIT 1000 
@@ -63,7 +61,7 @@ SELECT * FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` LI
 
 ![](/assets/images/query_results.png)
  
-**Step 7.** Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps your hometown zipcode. You can copy/paste
+**Step 7.** Modify the statement as shown below, and re-run it to retrieve the population for a specific zip code, perhaps your hometown zipcode. You can copy/paste
 and overwrite statements into the query pane.
 
 ~~~
@@ -78,11 +76,11 @@ SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakes
 
 ## Accessing BigQuery Data Outside the Sandbox
 
-BigQuery is certainly more than just an interactive workspace where you can query, import, analyze, and shape data with SQL. BigQuery serves as a data repository for by other cloud services and enterprise applications, regardless of where they are deployed.  
+BigQuery is certainly more than just an interactive workspace where you can query, import, analyze, and shape data with SQL. BigQuery serves as a data repository for other cloud services and enterprise applications, regardless of where they are deployed.  
   
-BigQuery provides APIs for use in Go, Java, Node.js, PHP, Python, C#, and Ruby code. Accessing and managing BigQuery data through code boosts the flexibility and power of SQL queries by introducing parameters, variables, logic, functions, or any other programming constructs (e.g. loops) you require.
+BigQuery provides APIs for use in Go, Java, Node.js, PHP, Python, C#, and Ruby code. Accessing and managing BigQuery data through code, boosts the flexibility and power of SQL queries by introducing parameters, variables, logic, functions, or any other programming constructs (e.g. loops) you require.
 
-Thankfully, Google Cloud provides tools that make it easy to connect to BigQuery externally and to experiment with coded SQL. In the next lab, you'll experiment with thes **Google Cloud Shell**, the **bq command-line tool**, and the **CloudShell Editor**. 
+Thankfully, Google Cloud provides tools that make it easy to connect to BigQuery externally, and to experiment with coded SQL. In the next lab, you'll experiment with the **Google Cloud Shell**, the **bq command-line tool**, and the **CloudShell Editor**. 
 
 ### Lab: Access BigQuery Data Through Google Cloud Shell
 
@@ -104,9 +102,9 @@ You should see the Explorer panel on the left, with a folder/file directory unde
 
 ![](/assets/images/new_file.png)
 
-**Step 4.** Create a new script file with the name **myfirstbqscript.sh**
+**Step 4.** Create a new script file and name it **myfirstbqscript.sh**.
 
-**Step 5.** Copy the following code into the script (in two lines). The ***bq query*** command let's you execute the SQL statement that follows it.  
+**Step 5.** Copy the following code into the script (in two lines). The **bq query** command executes the SQL statement that follows it.  
 
 ~~~~
 bq query --use_legacy_sql=false \ 
@@ -120,7 +118,7 @@ Make sure the backslash at the end of the first line is recognized. If it is col
 
 ... delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
 
-**Step 6.** On the command line in the bottom panel, run your script with ***./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
+**Step 6.** On the command line in the bottom panel, run your script with **./myfirstbqscript.sh**  If prompted, click to authorize use of the bq command. 
  
 ***Was there a permissions error when you ran your script?*** With no other permissions settings entered, each newly created script file you attempt run will require you to open up the permissions. Correct the issue by executing ***chmod +x myfirstbqscript.sh*** then run the script again. 
 
