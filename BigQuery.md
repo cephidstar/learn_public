@@ -221,6 +221,6 @@ If you signed up with Google BigQuery for the free account access, make sure to 
 [W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
 
 #### Quoting mechanisms in Unix/Linux ####
-[gnu.org](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
-[Educative](https://www.educative.io/answers/what-are-quoting-mechanisms-in-unix-linux)
+[gnu.org](https://www.gnu.org/software/bash/manual/html_node/Quoting.html), 
+[Educative](https://www.educative.io/answers/what-are-quoting-mechanisms-in-unix-linux), 
 [Tutorialspoint](https://www.tutorialspoint.com/unix/unix-quoting-mechanisms.htm)
