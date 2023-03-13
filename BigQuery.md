@@ -131,7 +131,8 @@ You should get a result similar to the one below.
 
 ## Converting SQL Queries to Parameterized Queries 
 
-When executing SQL from code, it's impractical to have to edit an SQL statement each time you want to produce slightly different results.  
+When executing SQL from code, it's impractical to have to edit an SQL statement each time you want to produce slightly different results. 
+**Parameterizing SQL queries** is central to the technique of writing dynamic SQL, which builds SQL statements dynamically at runtime. Dynamic SQL is commonly used in SQL stored procedures.  
 
 Recall the zipcode example from the previous lab:
 
@@ -139,7 +140,7 @@ Recall the zipcode example from the previous lab:
 'SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010` WHERE zipcode = "12054"' 
 ~~~~
 
-If you could substitute the literal "12054" in the command with a parameter, you could supply the script the value on the command line, each time you ran the query. Parameterizing SQL statements is central to the technique of writing dynamic SQL, which builds SQL statements dynamically at runtime. Dynamic SQL is commonly used in SQL stored procedures.
+If you could substitute the literal "12054" in the command with a parameter, you could supply the value on the command line, each time you ran your script. 
  
 ### Lab: Convert your SQL query into a parameterized query.
 
@@ -147,43 +148,47 @@ If you could substitute the literal "12054" in the command with a parameter, you
 
 Review: Running your script on the command line with a parameter would look like this:
 
-***$ ./myfirstbqscript.sh 12054***
+**$ ./myfirstbqscript.sh 12054**
 
 Within the script, the parameter value is placed in the variable ***$1*** . If you use multiple parameters on
 the command line, they would be assigned to the variables $1, $2, $3 etc. within the script. 
  
-Step 1. Add following line of code above the ***bq query*** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
+Step 1. Add following line of code above the **bq query** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
 
-***zipcode=$1***
+**zipcode=$1**
 
-Step 2. Replace ***WHERE zipcode = "12054"'*** in the SQL statement, with the following parameterized version.
+Step 2. Replace **WHERE zipcode = "12054"'** in the SQL statement, with the following parameterized version.
 
-***WHERE zipcode = "'$zipcode'"'*** 
+**WHERE zipcode = "'$zipcode'"'** 
 
-Step 3. Execute your script as ***./myfirstbqscript.sh ##### *** where ##### is a zipcode of your choice.
+Step 3. Execute your script as **./myfirstbqscript.sh ##### ** where ##### is a zipcode of your choice.
 
 #### Part II ####
  
-Just for fun, create another script named ***shakespeare.sh***, to run the same SQL statement we ran in the BigQuery Workspace: 
+Just for fun, create another script named **shakespeare.sh**, to run the same SQL statement we ran in the BigQuery Workspace: 
 
 ~~~
 SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakespeare WHERE word LIKE '%love%' GROUP BY word 
 ~~~
 
-Converting the ***LIKE '%love%'*** clause to use a parameter is a little trickier and not well documented. 
+Converting the **LIKE '%love%'** clause to use a parameter is a little trickier and not well documented. 
 
-Here you need to use ***LIKE "%'$search_string'%"***
+Here you need to use **LIKE "%'$search_string'%"**
 
 Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
 
 ## Other Things to Try
 
-####Challenge #1####
+#### Challenge #1 ####
+
 Write a script-driven BigQuery query that accepts 2 or 3 command line parameters that will become values used
-by the SQL statement. However, your script must execute without error when some or none of the parameters are provided.  
+by a parameterized SQL statement. 
+
+However, your script must execute without error when some or none of the parameters are provided.  
 Take some time to consider the SQL statement default behaviors when parameters are missing.
 
+#### Challenge #2 ####
 
 BigQuery is particularly suited for storing and analyzing observability data
 
