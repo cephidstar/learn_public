@@ -63,7 +63,7 @@ Step 6. Click the RUN command just above the query pane. The query results shoul
 
 ![](/assets/images/query_results.png)
  
-Step 7. Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps hometown zipcode. You can copy/paste
+Step 7. Modify the statement as shown below and re-run it to retrieve the population for a specific zip code, perhaps your hometown zipcode. You can copy/paste
 and overwrite statements into the query pane.
 
 ~~~
@@ -78,35 +78,35 @@ SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakes
 
 ## Accessing BigQuery Data Outside the Sandbox
 
-BigQuery is more than just an interactive workspace where you can query, import, analyze, and shape data with SQL. BigQuery serves as a data repository used by enterprise cloud services and applications, regardless of how they are deployed.  
+BigQuery is certainly more than just an interactive workspace where you can query, import, analyze, and shape data with SQL. BigQuery serves as a data repository for by other cloud services and enterprise applications, regardless of where they are deployed.  
   
-BigQuery provides APIs for use in Go, Java, Node.js, PHP, Python, C#, and Ruby code. Accessing and managing BigQuery data through code boosts the flexibility and power of SQL queries by introducing parameters, variables, logic and functions, or any other programming constructs (e.g. loops) you require.
+BigQuery provides APIs for use in Go, Java, Node.js, PHP, Python, C#, and Ruby code. Accessing and managing BigQuery data through code boosts the flexibility and power of SQL queries by introducing parameters, variables, logic, functions, or any other programming constructs (e.g. loops) you require.
 
-Thankfully, Google Cloud makes it easy to connect to BigQuery externally and experiment with coded SQL, through **Google Cloud Shell**, the **bq command-line tool**, and the **CloudShell Editor**. Let's practice using these tools.
+Thankfully, Google Cloud provides tools that make it easy to connect to BigQuery externally and to experiment with coded SQL. In the next lab, you'll experiment with thes **Google Cloud Shell**, the **bq command-line tool**, and the **CloudShell Editor**. 
 
 ### Lab: Access BigQuery Data Through Google Cloud Shell
 
-Step1. Access Google Cloud Shell in a separate browser tab, using the following URL https://console.cloud.google.com/bigquery?cloudshell=true .
+Step1. Access the Google Cloud Shell in a separate browser tab, using the following URL https://console.cloud.google.com/bigquery?cloudshell=true .
 
-Wait a few moments as Cloud Shell provisions a Compute Engine virtual machine running a Debian-based Linux operating system for your temporary use. The Cloud Shell terminal should open in a panel at the bottom of the screen:
+Wait a few moments as Cloud Shell provisions a Compute Engine virtual machine running a Debian-based Linux operating system for your use. The Cloud Shell terminal should open in a panel at the bottom of the screen:
 
 ![](/assets/images/Cloudshell_Terminal.png)
  
-Step2. But instead of creating, editing and running scripts solely on this bash shell command line, let's make this exercise even easier by using the Google Cloudshell Editor. 
+Step2. But instead of creating, editing and running scripts solely through this bash shell command line, let's make this exercise even easier by using the Google Cloudshell Editor. 
  
-Just above the terminal, to the right,  Click ![](/assets/images/open_editor.png) and give it a moment to appear. If prompted, open the Home Workspace, and again, if prompted Activate the shell.
+Just above the terminal, to the right,  Click ![](/assets/images/open_editor.png) and give it a moment to appear. If prompted, open the 'Home Workspace', and again, if prompted 'Activate' the shell.
 
 Step3. Now add the terminal back into the workspace by clicking **Open Terminal** above the editor.
 
 ![](/assets/images/open_terminal.png)
 
-You should now see the Explorer panel, with a folder/file directory under your Google account name. If you mouse-over the top of this directory, you should see icons for creating new files and folders. 
+You should see the Explorer panel on the left, with a folder/file directory under your Google account name. If you mouse-over the top of this directory, you should see icons for creating new files and folders. 
 
 ![](/assets/images/new_file.png)
 
-Create a new script file with the name **myfirstbqscript.sh**
+Step 4. Create a new script file with the name **myfirstbqscript.sh**
 
-Copy the following into the script (in two lines) 
+Step 5. Copy the following code into the script (in two lines). The ***bq query*** command let's you execute the SQL statement that follows it.  
 
 ~~~~
 bq query --use_legacy_sql=false \ 
@@ -114,24 +114,21 @@ bq query --use_legacy_sql=false \
 ~~~~
 
 ! Careful! 
-Make sure the backslash at the end of the first line is recognized. If it is red, 
+Make sure the backslash at the end of the first line is recognized. 
 
 bq query --use_legacy_sql=false \ 
 
-delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
+If it is colored red, delete it and retype it starting from preceding characters, until it is recognized. Otherwise your script will not run properly.
 
-On the command line in the bottom panel, run your script with ***$ ./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
+Step 6. On the command line in the bottom panel, run your script with ***./myfirstbqscript.sh***  If prompted, click to authorize use of the bq command. 
  
-Was there a permissions error when you ran it? 
+***Was there a permissions error when you ran your script?*** With no other permissions settings entered, each newly created script file you attempt run will require you to open up the permissions. Correct the issue by executing ***chmod +x myfirstbqscript.sh*** then run the script again. 
 
-With no other permissions settings entered, each newly defined script file you attempt run will require you to open up the permissions. 
-On the command line, execute ***$ chmod +x myfirstbqscript.sh*** 
-
-Try running the script again. You should get a result similar to the one below. 
+You should get a result similar to the one below. 
 
 ![](/assets/images/bq_sql_output_bd.png)
 
- 
+
 ## Converting SQL Queries to Parameterized Queries 
 
 When executing SQL from code, it's impractical to have to edit an SQL statement each time you want to produce slightly different results.  
@@ -146,26 +143,24 @@ If you could substitute the literal "12054" in the command with a parameter, you
  
 ### Lab: Convert your SQL query into a parameterized query.
 
-#### Part I ####
-
-Modify **myfirstbqscript.sh** to receive the value for the zip code from command line. 
+#### Part I - Modify myfirstbqscript.sh to receive the value for the zip code from the command line. ####
 
 Review: Running your script on the command line with a parameter would look like this:
 
 ***$ ./myfirstbqscript.sh 12054***
 
-Within the script, the parameter value is placed in the variable ***$1*** . If you placed multiple parameters on
-the command line, they would be received in the variables $1, $2, $3 etc.
+Within the script, the parameter value is placed in the variable ***$1*** . If you use multiple parameters on
+the command line, they would be assigned to the variables $1, $2, $3 etc. within the script. 
  
-For robustness and readability, you could add this line of code as the first line in your script.
+Step 1. Add following line of code above the ***bq query*** command in ***./myfirstbqscript.sh***, to recieve the zip code value in a well-named variable.
 
 ***zipcode=$1***
 
-And instead of ***WHERE zipcode = "12054"'*** you would need to modify that clause as follows:
+Step 2. Replace ***WHERE zipcode = "12054"'*** in the SQL statement, with the following parameterized version.
 
 ***WHERE zipcode = "'$zipcode'"'*** 
 
-Step x. Modify ***./myfirstbqscript.sh*** accordingly and run it with a single zipcode parameter.
+Step 3. Execute your script as ***./myfirstbqscript.sh ##### *** where ##### is a zipcode of your choice.
 
 #### Part II ####
  
@@ -179,18 +174,15 @@ Converting the ***LIKE '%love%'*** clause to use a parameter is a little trickie
 
 Here you need to use ***LIKE "%'$search_string'%"***
 
-Give it a try, and enjoy your Shakespeare data mining!
+Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
-
- 
 
 ## Other Things to Try
 
-Write script-driven BigQuery SQL that accepts multiple parameters, but also elegantly  
-
-operates when none or some of the parameters are supplied on the command line (or through a call). 
-
-Formulate the SQL statement so that when parameters are missing, it finds a workable default behavior. 
+####Challenge #1####
+Write a script-driven BigQuery query that accepts 2 or 3 command line parameters that will become values used
+by the SQL statement. However, your script must execute without error when some or none of the parameters are provided.  
+Take some time to consider the SQL statement default behaviors when parameters are missing.
 
 
 BigQuery is particularly suited for storing and analyzing observability data
