@@ -16,7 +16,7 @@ The BigQuery Workspace is available to anyone with a Google Account at no cost. 
 
 If you already have a Google account with a payment method defined, the BigQuery setup will consist of just a few steps. Otherwise, they'll be just a few more steps for entering and verifying your information.
 
-To get started, go to the [BigQuery main site](https://cloud.google.com/bigquery). If you're already signed up to use BigQuery, then the link above will take you to the right place and you can skip the rest of this section. 
+To get started, go to the [BigQuery main site](https://cloud.google.com/bigquery). If you're already signed up to use BigQuery, then the link will take you to the right place and you can skip the rest of this section. 
 
 Click either of the **getting started** buttons you'll find on the welcome/initialization screen.
 
