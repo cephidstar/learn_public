@@ -176,7 +176,7 @@ Here you need to use **LIKE "%'$search_string'%"**
 Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
 ~~~
-For more information on quoting mechanisms in Unix/Linux, check out the Resources at the end of this course.
+For more information on quoting mechanisms in Unix/Linux, check out the **Resources** at the end of this course.
 ~~~
 
 ## Other Things to Try
@@ -221,3 +221,5 @@ If you signed up with Google BigQuery for the free account access, make sure to 
 ### Other Resources ###
 
 [W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
+
+[Quoting mechanisms in Unix/Linux](https://www.educative.io/answers/what-are-quoting-mechanisms-in-unix-linux))
