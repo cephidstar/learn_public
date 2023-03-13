@@ -175,9 +175,7 @@ Here you need to use **LIKE "%'$search_string'%"**
 
 Give it a try, and enjoy your rapid fire Shakespeare data mining!
 
-~~~
-For more information on quoting mechanisms in Unix/Linux, check out the **Resources** at the end of this course.
-~~~
+For more information on quoting mechanisms in Unix/Linux, check out the **Resources** section at the end of this course.
 
 ## Other Things to Try
 
