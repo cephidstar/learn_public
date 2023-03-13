@@ -220,4 +220,4 @@ If you signed up with Google BigQuery for the free account access, make sure to 
 
 [W3 Schools SQL Documentation](https://www.w3schools.com/sql/sql_quickref.asp)
 
-[Quoting mechanisms in Unix/Linux](https://www.educative.io/answers/what-are-quoting-mechanisms-in-unix-linux))
+[Quoting mechanisms in Unix/Linux](https://www.educative.io/answers/what-are-quoting-mechanisms-in-unix-linux)
