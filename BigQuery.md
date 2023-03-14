@@ -74,7 +74,7 @@ SELECT sum(population) FROM `bigquery-public-data.census_bureau_usa.population_b
 SELECT word, SUM(word_count) AS count FROM `bigquery-public-data`.samples.shakespeare WHERE word LIKE '%love%' GROUP BY word 
 ~~~
 
-## Accessing BigQuery Data Outside the Sandbox
+## Accessing BigQuery Data Outside the Workspace
 
 BigQuery is certainly more than just an interactive workspace where you can query, import, analyze, and shape data with SQL. BigQuery serves as a data repository for other cloud services and enterprise applications, regardless of where they are deployed.  
   
