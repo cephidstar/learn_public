@@ -10,7 +10,7 @@ In this course, you'll become familiar with BigQuery through hands-on practice, 
  
 At the end of this course, you'll have had some practice with BigQuery and you'll be equipped with a sandbox to continue experimenting on your own, using the many resources that Google Cloud and other practitioners provide.
 
-## Connecting to the BigQuery Sandbox
+## Connecting to the BigQuery Workspace
 
 The BigQuery Workspace is available to anyone with a Google Account at no cost. However Google requires you to have set up a payment method on your account, for at minimum, verification purposes.
 
